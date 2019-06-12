@@ -39,7 +39,7 @@ do
     echo "USB-HUB $deviceFile:"
     echo "Nr.| Status | Device"
     echo "---+--------+----------------------"
-    for devicename in /dev/disk/by-path/pci-0000:00:14.0-usb-0:*-scsi-0:0:0:0
+    for devicename in /dev/disk/by-path/pci-0000:00:1?.0-usb-0:*-scsi-0:0:0:0
     do
       if [ -b "$devicename" ]
       then
