@@ -22,6 +22,13 @@ umount -l /media/usbcopy/* 2>/dev/null
 echo "syncronisiere mit Netzwerk..."
 rsync -rv --size-only --delete --exclude=@eaDir --rsync-path=/opt/bin/rsync nas:"/volume1/Aufnahme-stereo/015\ Missionskonferenz/Missionskonferenz\ 2019/" "/usbcopy-files/"
 
+if [ $? -ne 0 ]
+then
+  echo "Fehler beim syncronisieren mit Netzwerk !!!!"
+  echo "ABBRUCH !!!"
+  exit 1
+fi
+
 #list all connected drives
 enter=true
 while $enter
